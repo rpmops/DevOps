@@ -2,26 +2,22 @@
 ==========================
 
 ### 1. 下载ISO镜像
-用自己熟悉的工具，从国内镜像下载速度较快，例如阿里镜像下载地址
+使用自己熟悉的工具，从阿里云镜像下载
 ```
 https://mirrors.aliyun.com/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso
 ```
 下载完成记得校验sha1sum: 13675c6f74880e7ff3481b91bdaf925ce81bda8f
 
-### 2. 下载制作工具 [Rufus](https://rufus.akeo.ie/)
-成功制作启动U盘的关键工具，其他同类工具大多已经失效
-```
-https://rufus.akeo.ie/downloads/rufus-2.18p.exe
-```
-绿色软件，下载保存，直接运行，我在项目bin目录下备份了一份，sha1sum: d0054fc533603004a107436f47bc020afd54fa05
+### 2. 下载制作工具 [Rufus](https://rufus.akeo.ie/downloads/rufus-2.18p.exe)
+绿色软件，下载保存，直接运行，我在项目下备份了一份，sha1sum: d0054fc533603004a107436f47bc020afd54fa05
+[点击下载](https://github.com/rpmops/DevOps/raw/master/ks/bin/rufus-2.18p.exe)
+> 成功制作启动U盘的关键工具，其他同类工具大多已经失效
 
 ### 3. 制作USB安装盘
-
-插入U盘，选择ISO镜像，缺省值，无需更改，点击开始
-![如图](img/rufus.png)
+插入U盘，选择ISO镜像，无需修改默认值，直接点击开始  
+![](img/rufus.png)
 
 ### 4. 配置kickstart修改密码或添加内容
-
 缺省密码`123456`，如果需要修改，请按以下步骤操作
 
 1. 生成root密码
@@ -44,9 +40,9 @@ $ ksvalidator ks.cfg
 
 ### 5. 编辑启动菜单项
 修改使用Rufus制作好的U盘
-- ks.cfg复制isolinux/ks.cfg
-- isolinux.cfg替换isolinux/isolinux.cfg
-- grub.cfg替换EFI/BOOT/grub.cfg
+- ks.cfg复制isolinux/ks.cfg [查看详情](https://github.com/rpmops/DevOps/raw/master/ks/ks.cfg)
+- isolinux.cfg替换isolinux/isolinux.cfg [查看详情](https://github.com/rpmops/DevOps/raw/master/ks/isolinux.cfg)
+- grub.cfg替换EFI/BOOT/grub.cfg [查看详情](https://github.com/rpmops/DevOps/raw/master/ks/grub.cfg)
 
 > 以下只是说明，无需动手操作
 
@@ -74,7 +70,7 @@ menuentry 'EFI Install CentOS 7' --class fedora --class gnu-linux --class gnu --
 >补充说明：安装盘的卷标为`CentOS 7 x86_64`，空格为十六进制\x20，所以`LABEL=CENTOS\x207\x20X8`，制作U盘时，Rufus已经自动修改好isolinux.cfg和grub.cfg
 
 ### 6. 使用VirtualBox测试安装盘
-如何[下载安装](https://download.virtualbox.org/virtualbox/5.2.8/VirtualBox-5.2.8-121009-Win.exe)，操作步骤此处省略，您可以搜索相关文档，关键的两点说明如下：
+如何[下载安装](http://www.oracle.com/technetwork/server-storage/virtualbox/downloads/index.html)，操作步骤此处省略，您可以搜索相关文档，关键的两点说明如下：
 
 1. 从物理盘创建虚拟盘
 先插好U盘，运行`diskmgmt.msc`获取移动硬盘序号PysicalDrive`1`，再以**管理员身份运行**`cmd.exe`输入如下命令：
