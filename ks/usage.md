@@ -8,7 +8,7 @@ https://mirrors.aliyun.com/centos/7.5.1804/isos/x86_64/CentOS-7-x86_64-Minimal-1
 ```
 下载完成记得校验sha1sum: 13675c6f74880e7ff3481b91bdaf925ce81bda8f
 
-### 2. 下载制作工具 [Rufus](https://rufus.akeo.ie/downloads/rufus-2.18p.exe)
+### 2. 下载制作工具 [Rufus](https://rufus.akeo.ie/)
 绿色软件，下载保存，直接运行，我在项目下备份了一份，sha1sum: d0054fc533603004a107436f47bc020afd54fa05
 [点击下载](https://github.com/rpmops/DevOps/raw/master/ks/bin/rufus-2.18p.exe)
 > 成功制作启动U盘的关键工具，其他同类工具大多已经失效
