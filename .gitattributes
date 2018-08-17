@@ -2,3 +2,4 @@ ks/bin/rufus-2.18p.exe filter=lfs diff=lfs merge=lfs -text
 ks/img/ksins.png filter=lfs diff=lfs merge=lfs -text
 ks/img/rufus.png filter=lfs diff=lfs merge=lfs -text
 ks/img/usboot.png filter=lfs diff=lfs merge=lfs -text
+ks/bin/rufus-3.1p.exe filter=lfs diff=lfs merge=lfs -text
